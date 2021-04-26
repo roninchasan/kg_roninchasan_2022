@@ -54,4 +54,4 @@ nums.forEach(num => {
     i++;
 })
 
-console.log(wordString);
+console.log(wordString); 
