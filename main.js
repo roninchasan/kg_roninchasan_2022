@@ -4,15 +4,14 @@ let args = process.argv;
 //trim files from array, rename
 let nums = args.slice(2);
 
-let words = [];
-var currentString = "";
+var wordString = "";
+var i = 0;
 nums.forEach(num => {
     currentString = "";
 
-    for (i=0;i<num.length; i++){
-        char = num[i];
+    for (j=0;j<num.length; j++){
 
-        switch (char){
+        switch (num[j]){
             case '0':
                 currentString += 'Zero';
                 break;
@@ -47,4 +46,12 @@ nums.forEach(num => {
                 break;
         }
     }
+    //add comma for formatting
+    if ((i !== (nums.length))&&(i!==0)){
+        wordString += ",";
+    }
+    wordString+=currentString;
+    i++;
 })
+
+console.log(wordString);
